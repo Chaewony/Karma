@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fca560c1e89b34085a0aeae2986552, type: 3}
   m_Name: Fool
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1341b90f047c5e14da68e5855c8ef00a, type: 3}
+  sprite: {fileID: 21300000, guid: 9f2547c4c55d1294ab9be2bb6d13f2e9, type: 3}
   buffName: Fool
-  hp: 0
-  defence: 0
+  fullHp: 0
+  dashCoolBuff: 0
+  fireBallCoolBuff: 0
+  rhythmCoolBuff: 0
+  buffContext: "\uBBF8\uC815"

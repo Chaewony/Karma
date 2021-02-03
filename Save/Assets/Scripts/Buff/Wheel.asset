@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fca560c1e89b34085a0aeae2986552, type: 3}
   m_Name: Wheel
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a2eccda9be61c834d9a341234b7d93dd, type: 3}
+  sprite: {fileID: 21300000, guid: 4ae0628ad0201a840aa527c3e5c04cd0, type: 3}
   buffName: Wheel
   fullHp: 0
   dashCoolBuff: 0
   fireBallCoolBuff: 0
   rhythmCoolBuff: -2.5
+  buffContext: "\uB9AC\uB4EC\uC2A4\uD0AC \uCFE8\uD0C0\uC784 \uAC10"

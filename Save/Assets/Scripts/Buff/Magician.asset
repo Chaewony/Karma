@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fca560c1e89b34085a0aeae2986552, type: 3}
   m_Name: Magician
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 0a00f67154826fa46820450ca8fbb987, type: 3}
+  sprite: {fileID: 21300000, guid: c14d1ba58a3a5654db14b75925b05462, type: 3}
   buffName: Magician
   fullHp: 50
-  dashCool: -2.5
-  fireBallCool: 0
-  rhythmCool: 0
+  dashCoolBuff: 0
+  fireBallCoolBuff: 0
+  rhythmCoolBuff: 0
+  buffContext: "\uCCB4\uB825 \uC99D\uAC00"

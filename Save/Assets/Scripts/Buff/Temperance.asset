@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fca560c1e89b34085a0aeae2986552, type: 3}
   m_Name: Temperance
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4c2035114a0d3374bb1821e7930ff680, type: 3}
+  sprite: {fileID: 21300000, guid: 995a8a66627e4d54180889793152039c, type: 3}
   buffName: Temperance
   fullHp: 0
   dashCoolBuff: -2.5
   fireBallCoolBuff: 0
   rhythmCoolBuff: 0
+  buffContext: "\uB300\uC26C \uCFE8\uD0C0\uC784 \uAC10\uC18C"

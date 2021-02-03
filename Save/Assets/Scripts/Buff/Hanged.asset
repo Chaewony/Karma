@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fca560c1e89b34085a0aeae2986552, type: 3}
   m_Name: Hanged
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a033df343b52b7b4ca7fc48a28294406, type: 3}
+  sprite: {fileID: 21300000, guid: 52cec0bd6da09194481f2c612e3af81f, type: 3}
   buffName: Hanged
   fullHp: 0
   dashCoolBuff: 0
   fireBallCoolBuff: -2.5
   rhythmCoolBuff: 0
+  buffContext: "\uD30C\uC774\uC5B4\uBCFC \uCFE8\uD0C0\uC784 \uAC10\uC18C"

@@ -20,6 +20,8 @@ public class BuffInfo : ScriptableObject
     private float fireBallCoolBuff;
     [SerializeField]
     private float rhythmCoolBuff;
+    [SerializeField]
+    private string buffContext;
 
     public Sprite mySprite { get => sprite; }
     public string myBuffName { get => buffName; }
@@ -27,6 +29,7 @@ public class BuffInfo : ScriptableObject
     public float myDashCoolBuff { get => dashCoolBuff; }
     public float myFireBallCoolBuff { get => fireBallCoolBuff; }
     public float myRhythmCoolBuff { get => rhythmCoolBuff; }
+    public string myBuffContext { get => buffContext; }
 }
 
 public enum buffSlot

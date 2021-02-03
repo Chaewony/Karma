@@ -41,7 +41,7 @@ public class Buff : MonoBehaviour
 
         for (int i = 0; i < selectBuff.Count; i++)
         {
-            buffNames[i].text = selectBuff[i].myBuffName; //슬롯UI에 (선택된)텍스트 할당
+            //buffNames[i].text = selectBuff[i].myBuffName; //슬롯UI에 (선택된)텍스트 할당
             buffImages[i].sprite = selectBuff[i].mySprite; //슬롯UI에 (선택된)이미지 할당 
         }
     }
