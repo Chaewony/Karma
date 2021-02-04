@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class NoteManager : MonoBehaviour
 {
-
     public int bpm = 0;
     double currentTime = 0d;
     //float fades = 1.0f; //페이드 값
     //bool doDestroy = false; //노트 파괴 여부
-    public bool isRhythmKey = false;  //G키 
+    public bool isRhythmKey = false;  //F키 
+    //private bool isOnce=true;
+    //private int callcount;
 
     //int skill_stack = 0;    // (임시용)리듬 입력을 사용하기 위핸 필요 스택 개수(나중에 인자로 받아올 것)
 
@@ -39,65 +40,70 @@ public class NoteManager : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
-        // 일정 주기마다 노트 생성(이후 랜덤 박자에 따른 노트 생성으로 변경 예정)
-        if (currentTime >= 60d / bpm)
+        bpm = Random.Range(0, 200); //랜덤 박자에 따른 노트 생성
+        if (currentTime >= 100d / bpm)
         {
             CreateNote();
-            currentTime -= 60d / bpm;
+            currentTime -= 100d / bpm;
         }
 
         // 판정
-        if (NoteList.Count > 0) // 판정을 받을 노트 리스트가 0개 초과이면
+        if (NoteList.Count > 0) // 판정을 받을 노트 리스트가 0개 초과이면, 노트 생성과 동시에 노트리스트에 값이 추가되는것같음
         {
-            if (Input.GetKeyDown(KeyCode.G) && !isRhythmKey)    // 키 입력을 받았을 때
+            //theEffect.JudgementEffect(4);
+            if (Input.GetKeyDown(KeyCode.F) && !isRhythmKey)    // 키 입력을 받았을 때
             {
-                Debug.Log("키 입력 받기");
                 isRhythmKey = true;
-                if (NoteList[0].transform.localScale.x >= 0.9f && NoteList[0].transform.localScale.x <= 1.1f)  // Perfect
+                if (NoteList[0].transform.localScale.x > 0.9f+0.3f && NoteList[0].transform.localScale.x <= 1.1f+0.3f)  // Perfect
                 {
                     Debug.Log("Perfect!");
                     score += 100; //점수
                     theEffect.JudgementEffect(0);
                     NoteList[0].GetComponent<Note>().enabled = false;
-                    StartCoroutine(Fade());
+                    //StartCoroutine(Fade());
                     //doDestroy = true;
+                    RemoveNote();
                 }
-                else if (NoteList[0].transform.localScale.x > 1.1f && NoteList[0].transform.localScale.x <= 1.3f)   // Great
+                else if (NoteList[0].transform.localScale.x > 1.1f+0.3f && NoteList[0].transform.localScale.x <= 1.3f+0.3f)   // Great
                 {
                     Debug.Log("Great!");
                     score += 80; //점수
                     theEffect.JudgementEffect(1);
                     NoteList[0].GetComponent<Note>().enabled = false;
-                    StartCoroutine(Fade());
+                    //StartCoroutine(Fade());
+                    RemoveNote();
                 }
-                else if (NoteList[0].transform.localScale.x > 1.3f && NoteList[0].transform.localScale.x <= 1.7f)   // Good
+                else if (NoteList[0].transform.localScale.x > 1.3f+0.3f && NoteList[0].transform.localScale.x <= 1.7f+0.3f)   // Good
                 {
                     Debug.Log("Good!");
                     score += 60; //점수
                     theEffect.JudgementEffect(2);
                     NoteList[0].GetComponent<Note>().enabled = false;
-                    StartCoroutine(Fade());
+                    //StartCoroutine(Fade());
+                    RemoveNote();
                 }
-                else if (NoteList[0].transform.localScale.x > 1.7f && NoteList[0].transform.localScale.x <= 2.1f)   // Bad
+                else if (NoteList[0].transform.localScale.x > 1.7f+0.3f && NoteList[0].transform.localScale.x <= 2.1f+0.3f)   // Bad
                 {
                     Debug.Log("Bad!");
                     score += 40; //점수
                     theEffect.JudgementEffect(3);
                     NoteList[0].GetComponent<Note>().enabled = false;
-                    StartCoroutine(Fade());
+                    //StartCoroutine(Fade());
+                    RemoveNote();
                 }
-                else if (NoteList[0].transform.localScale.x > 2.1f) // Miss
+                else if (NoteList[0].transform.localScale.x > 2.1f+0.3f) // Miss
                 {
                     Debug.Log("Miss!");
                     score += 20; //점수
                     theEffect.JudgementEffect(4);
                     NoteList[0].GetComponent<Note>().enabled = false;
-                    StartCoroutine(Fade());
+                    //StartCoroutine(Fade());
+                    RemoveNote();
                 }
                 //fades = 1.0f;   // fades 값 1.0으로 초기화
             }
 
-            else if (NoteList[0].transform.localScale.x <= 0.8f)    // 키 입력을 받지 못했을 때
+            else if (NoteList[0].transform.localScale.x <= 1.1f)    // 키 입력을 받지 못했을 때
             {
                 Debug.Log("No HIT");
                 score += 0; //점수
@@ -109,49 +115,30 @@ public class NoteManager : MonoBehaviour
         }
     }
 
-    /* // 구버전
-    private void FixedUpdate()
-    {
-        if (doDestroy)
-        {
-            if (fades > 0)
-            {
-                fades -= 0.1f;
-                NoteList[0].GetComponent<Image>().color = new Color(1f, 1f, 1f, fades);
-            }
-            else
-            {
-                doDestroy = false;
-                getSpace = false;
-                Destroy(NoteList[0]);
-                NoteList.Remove(NoteList[0]);
-            }
-        }
-    }
-    */
-
     void CreateNote()   //Create Note
     {
         GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
+
         t_note.AddComponent<SpriteRenderer>();
         NoteList.Add(t_note);
         t_note.transform.SetParent(this.transform);
     }
 
-    void RemoveNote()   // 노트 제거 함수
+    void RemoveNote()   // 노트 제거 함수, 게임 오브젝트 삭제
     {
         isRhythmKey = false;
         Destroy(NoteList[0]);
         NoteList.Remove(NoteList[0]);
     }
 
-    IEnumerator Fade()  // 페이드 아웃 및 노트 제거 함수
+    /*IEnumerator Fade()  // 페이드 아웃 및 노트 제거 함수, 리스트에서 삭제
     {
-        for (float i = 1.0f; i >= 0f; i -= 0.01f)
+        *//*for (float i = 1.0f; i >= 0f; i -= 0.01f)
         {
             NoteList[0].GetComponent<Image>().color = new Color(1f, 1f, 1f, i);
             yield return null;
-        }
+        }*//*
         RemoveNote();
-    }
+        yield return null;
+    }*/
 }

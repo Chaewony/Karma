@@ -9,7 +9,7 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x > 0.8f)  //노트가 작아짐
+        if (transform.localScale.x > 0.2f+0.5f)  //노트가 작아짐
         {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0) * noteSpeed * Time.deltaTime;
         }

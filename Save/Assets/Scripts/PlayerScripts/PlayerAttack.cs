@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public GameManager gameManager;
     public PlayerMove playerMove;
     public NoteManager noteManager;
+    public EffectManager effectManager;
 
     //소드 어택
     [SerializeField]
@@ -69,10 +70,11 @@ public class PlayerAttack : MonoBehaviour
     {
         if (isDash)
         {
+            isDash = false;                                  //쿨타임동안 대쉬 불가능
+            StartCoroutine(gameManager.DashCool());          //쿨타임 호출
+
             playerMove.Dash();                               //대쉬 함수 호출
             yield return null;
-            StartCoroutine(gameManager.DashCool());          //쿨타임 호출
-            isDash = false;                                  //쿨타임동안 대쉬 불가능
         }
     }
 
@@ -91,23 +93,25 @@ public class PlayerAttack : MonoBehaviour
     {
         if(isRight&&isFire) //우측
         {
+            isFire = false;                                  //쿨타임동안 파이어볼 어택 불가능
+            StartCoroutine(gameManager.FireCool());          //쿨타임 호출
+
             fireBall.gameObject.SetActive(true);             //파이어 볼 컴포넌트 활성화
             anim.SetBool("isFire",true);
             yield return new WaitForSeconds(0.1f);           //애니메이션 지속
             anim.SetBool("isFire", false);
             yield return new WaitForSeconds(fireAttackTime); //공격 지속
-            StartCoroutine(gameManager.FireCool());          //쿨타임 호출
-            isFire = false;                                  //쿨타임동안 파이어볼 어택 불가능
             fireBall.gameObject.SetActive(false);            //파이어볼 컴포넌트 비활성화
         }
         else if(!isRight&&isFire)//좌측
         {
+            isFire = false;
+            StartCoroutine(gameManager.FireCool());
+
             fireBallLeft.gameObject.SetActive(true);
             anim.SetBool("isFire", true);
             yield return new WaitForSeconds(fireAttackTime);
             anim.SetBool("isFire", false);
-            StartCoroutine(gameManager.FireCool());
-            isFire = false;
             fireBallLeft.gameObject.SetActive(false);
         }
     }
@@ -116,11 +120,15 @@ public class PlayerAttack : MonoBehaviour
     {
         if(isRhythm)
         {
-            noteManager.isRhythmKey = false; //초기화 시켜주기
-            rhytnmUI.gameObject.SetActive(true);             //총 8번의 입력 기회 있음
-            noteManager.score = 0;                           //시작 시 점수 초기화
-            yield return new WaitForSeconds(getRhythmTime);  //리듬 입력 지속 시간
+            effectManager.JudgementEffect(5);
+
+            isRhythm = false;
             StartCoroutine(gameManager.RhythmCool());        //쿨타임 걸어주기
+
+            noteManager.isRhythmKey = false;                 //초기화 시켜주기
+            noteManager.score = 0;                           //시작 시 점수 초기화
+            rhytnmUI.gameObject.SetActive(true);             
+            yield return new WaitForSeconds(getRhythmTime);  //리듬 입력 지속 시간
             rhytnmUI.gameObject.SetActive(false);            //시간이 지나면 비활성화
 
             if (noteManager.score >= 100) //100점 이상이면 기술
@@ -130,7 +138,6 @@ public class PlayerAttack : MonoBehaviour
                 anim.SetBool("isRhythm", false);
                 Debug.Log(noteManager.score);
             }
-            
         }
     }
 
