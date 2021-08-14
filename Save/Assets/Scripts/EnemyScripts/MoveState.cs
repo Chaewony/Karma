@@ -38,7 +38,7 @@ public class MoveState : State //스테이트 상속
             enemy.SetState(new IdleState()); //대기 상태로 전환
         }
 
-        if(enemy.distance<1.25f)
+        if(enemy.distance<1.7f)
         {
             enemy.SetState(new AttackState()); //공격 상태로 전환
         }

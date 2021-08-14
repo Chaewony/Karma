@@ -17,5 +17,5 @@ MonoBehaviour:
   fullHp: 0
   dashCoolBuff: 0
   fireBallCoolBuff: 0
-  rhythmCoolBuff: -2.5
-  buffContext: "\uB9AC\uB4EC\uC2A4\uD0AC \uCFE8\uD0C0\uC784 \uAC10"
+  rhythmCoolBuff: -3
+  buffContext: "\uB9AC\uB4EC\uC2A4\uD0AC \uCFE8\uD0C0\uC784 \uAC10\uC18C"

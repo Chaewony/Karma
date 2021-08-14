@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Dessert.unity
+    guid: 4e4f571b0bbbd6a41bedb121d52671ba
+  - enabled: 1
+    path: Assets/Scenes/Arcaive.unity
+    guid: 199591b205bcc0f4cbf959cd598ec78b
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 507cf07d4b43f0947b3598f80711dc70
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GameEnding.unity
+    guid: f4453d0baa97b0f489256cdd5cc384e9
   m_configObjects: {}

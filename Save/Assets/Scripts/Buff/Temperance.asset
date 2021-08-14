@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 995a8a66627e4d54180889793152039c, type: 3}
   buffName: Temperance
-  fullHp: 0
-  dashCoolBuff: -2.5
+  fullHp: 50
+  dashCoolBuff: 0
   fireBallCoolBuff: 0
   rhythmCoolBuff: 0
-  buffContext: "\uB300\uC26C \uCFE8\uD0C0\uC784 \uAC10\uC18C"
+  buffContext: "\uCCB4\uB825 \uC99D\uAC00"

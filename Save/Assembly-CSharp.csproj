@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>4.8.2.0</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>4.9.1.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2019.4.16f1</UnityVersion>
@@ -64,19 +64,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EndingCredit.cs" />
     <Compile Include="Assets\Scripts\Buff\Buff.cs" />
     <Compile Include="Assets\Scripts\Buff\BuffInfo.cs" />
     <Compile Include="Assets\Scripts\Buff\ChoosenBuff.cs" />
     <Compile Include="Assets\Scripts\Buff\SlotType.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossAttackState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossIdleState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossUpState.cs" />
     <Compile Include="Assets\Scripts\Dialogues\ObjData.cs" />
     <Compile Include="Assets\Scripts\Dialogues\TalkManager.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\AttackState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyScripts\HurtState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\IdleState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\MoveState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\State.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBoss.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossAttackState.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossBasicState.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossState.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HpBar.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
@@ -94,8 +103,6 @@
     <Compile Include="Assets\Scripts\StartScene\FadeIn.cs" />
     <Compile Include="Assets\Scripts\StartScene\FadeOut.cs" />
     <Compile Include="Assets\Scripts\StartScene\MainUI.cs" />
-    <None Include="Assets\Sprites\Player\Read Me.txt" />
-    <None Include="Assets\Sprites\Enemy\Read Me.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public PlayerMove playerMove;
     public NoteManager noteManager;
     public EffectManager effectManager;
+    public CameraManager cameraManager;
 
     //소드 어택
     [SerializeField]
@@ -134,8 +135,10 @@ public class PlayerAttack : MonoBehaviour
             if (noteManager.score >= 100) //100점 이상이면 기술
             {
                 anim.SetBool("isRhythm", true);
+                cameraManager.isMove = true; //땅 흔들림 애니메이션
                 yield return new WaitForSeconds(rhythmAttackTime);//공격 지속 시간
                 anim.SetBool("isRhythm", false);
+                cameraManager.isMove = false; //땅 흔들림 애니메이션 종료
                 Debug.Log(noteManager.score);
             }
         }

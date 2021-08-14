@@ -15,7 +15,7 @@ public class AttackState : State
     {
         enemy.anim.SetTrigger("isAttacking");
         
-        if (enemy.distance > 1.25f)
+        if (enemy.distance > 1.7f)
         {
             enemy.SetState(new MoveState());
         }

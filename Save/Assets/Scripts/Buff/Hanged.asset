@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 52cec0bd6da09194481f2c612e3af81f, type: 3}
   buffName: Hanged
   fullHp: 0
-  dashCoolBuff: 0
-  fireBallCoolBuff: -2.5
+  dashCoolBuff: -2.5
+  fireBallCoolBuff: 0
   rhythmCoolBuff: 0
-  buffContext: "\uD30C\uC774\uC5B4\uBCFC \uCFE8\uD0C0\uC784 \uAC10\uC18C"
+  buffContext: "\uB300\uC26C \uCFE8\uD0C0\uC784 \uAC10\uC18C"

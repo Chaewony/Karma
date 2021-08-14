@@ -664,19 +664,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EndingCredit.cs" />
     <Compile Include="Assets\Scripts\Buff\Buff.cs" />
     <Compile Include="Assets\Scripts\Buff\BuffInfo.cs" />
     <Compile Include="Assets\Scripts\Buff\ChoosenBuff.cs" />
     <Compile Include="Assets\Scripts\Buff\SlotType.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossAttackState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossIdleState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossState.cs" />
+    <Compile Include="Assets\Scripts\DessertBossScripts\BossUpState.cs" />
     <Compile Include="Assets\Scripts\Dialogues\ObjData.cs" />
     <Compile Include="Assets\Scripts\Dialogues\TalkManager.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\AttackState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyScripts\HurtState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\IdleState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\MoveState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\State.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBoss.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossAttackState.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossBasicState.cs" />
+    <Compile Include="Assets\Scripts\ForestBoss\ForestBossState.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HpBar.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
@@ -694,10 +703,6 @@
     <Compile Include="Assets\Scripts\StartScene\FadeIn.cs" />
     <Compile Include="Assets\Scripts\StartScene\FadeOut.cs" />
     <Compile Include="Assets\Scripts\StartScene\MainUI.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\Enemy\Read Me.txt" />
-    <None Include="Assets\Sprites\Player\Read Me.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

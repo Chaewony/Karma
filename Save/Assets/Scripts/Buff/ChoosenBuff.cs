@@ -17,7 +17,8 @@ public class ChoosenBuff : MonoBehaviour
 
         //버프 카드 선택시 각각 스탯 증가(버프 적용)
         hpBar.playerHp += buff.mySelectBuff[indexNum].myHpBuff;
-        gameManager.dashCool += buff.mySelectBuff[indexNum].myDashCoolBuff; //값이 다 0으로 되어있네
+        hpBar.playerFullHp += buff.mySelectBuff[indexNum].myHpBuff;
+        gameManager.dashCool += buff.mySelectBuff[indexNum].myDashCoolBuff;
         gameManager.fireCool += buff.mySelectBuff[indexNum].myFireBallCoolBuff;
         gameManager.rhythmCool += buff.mySelectBuff[indexNum].myRhythmCoolBuff;
     }
